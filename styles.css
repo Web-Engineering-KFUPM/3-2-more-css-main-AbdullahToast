@@ -56,6 +56,16 @@
      and apply text-transform: capitalize.
    - For the .copy .intro class: set the font-style to italic and slightly increase the line-height and set the top margin of 0.25 rem.
 */
+.copy .title{
+  font-size: 1.5rem;
+  font-weight: 650;
+  text-transform: capitalize;
+}
+.copy .intro{
+  font-style: italic;
+  line-height: 1.6;
+  margin-top: 0.25rem;
+}
 
 /* TODO 6:
    - For the .toolbar class: make it a flex container, distribute items with space-between,
@@ -65,12 +75,53 @@
      wrapping items using flex-wrap as wrap, adding a gap of 0.75rem, and top margin of 0.75rem.
    - For the .product-grid .item class: Make each item flexible with a flex grow of 1px, flex shrinnk of 1px, and minimum width of 140px, set a minimum height of 90px, apply a soft background and rounded corners, center the content using flexbox, and make the text bold e.g. 700.
 */
+.btn{
+  padding: 0.5rem 1rem;
+  border: none;
+  background: var(--brand);
+  color: white;
+  border-radius: 8px;
+}
+
+.btn:hover{
+  background: var(--brand-dark);
+}
+
+.product-grid{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.product-grid .item{
+  flex: 1 1 140px;
+  min-height: 90px;
+  background: rgba(37, 99, 235, 0.12);
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+}
 
 /* TODO 7:
   - .static-box: Add padding (0.5rem 0.75rem), round the corners (10px), apply a light gray background using rgba(0,0,0,0.05), and add bottom margin (0.5rem).
 */
+.static-box{
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.05);
+  margin-bottom: 0.5rem;
+}
 
 /* Base CSS (already provided for you).*/
+
+* {
+  box-sizing: border-box;
+}
 
 html,
 body {
@@ -86,12 +137,15 @@ body {
   --muted: #6b7280;        /* muted text */
   --bg: #f6f7fb;           /* page background */
   --card: #ffffff;         /* card/background surfaces */
+  --brand: #2563eb;       
+  --brand-dark: #1d4ed8;  
 }
 
 .site-header,
 .site-footer {
   text-align: center;
   padding: 1.25rem;
+  background: var(--card);
 }
 
 .container {
@@ -116,6 +170,10 @@ body {
 .toolbar {
   padding: 0.5rem;
   border: 1px dashed rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 
 .position-stage {
@@ -251,4 +309,35 @@ body {
   background: rgba(37, 99, 235, 0.7);
   z-index: 2;
   transform: translate(18px, -18px);
+}
+.tagline{
+  color: var(--muted);
+}
+
+.color-note.color-demo{
+  color: var(--brand);
+  font-weight: bold;
+}
+.color-demo.muted{
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.bg-sample{
+  width: 100%;
+  min-height: 80px;
+  padding: 0.75rem;
+  margin-block: 0.75rem;
+  border-radius: 8px;
+  color: white;
+  background: linear-gradient(135deg, var(--brand), #22c55e);
+}
+.inline-label{
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+.inline-label.alt{
+  display: inline;
+  border: 1px dashed rgba(0, 0, 0, 0.18);
 }
