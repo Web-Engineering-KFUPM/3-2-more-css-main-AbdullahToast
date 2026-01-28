@@ -97,7 +97,7 @@
 .product-grid .item{
   flex: 1 1 140px;
   min-height: 90px;
-  background-color: rgba(37, 99, 235, 0.12);
+  background-color: rgba(249, 252, 255, 0.938);
   border-radius: 8px;
 
   display: flex;
